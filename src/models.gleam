@@ -9,6 +9,7 @@ pub type Project {
     thumb: String,
     prod: String,
     categories: List(String),
+    description: String,
   )
 }
 
@@ -25,6 +26,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/microservices-go.png",
       categories: ["go", "rabbitmq", "grpc"],
       prod: "https://swarm.ristoflink.dev",
+      description: "This project demonstrates a microservices architecture using Go, Docker, gRPC, and RabbitMQ.",
     ),
     Project(
       slug: "book-recommender",
@@ -33,6 +35,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/book-recommender.png",
       categories: ["python", "llm", "openai"],
       prod: "https://book-recommender-rf.up.railway.app",
+      description: "This semantic book recommender was built with Python, OpenAI, LangChain, Chroma, and Gradio. It allows users to find books semantically similar to a given description and filter them by category and emotional tone. The recommendations are generated using a Chroma vector database and OpenAI embeddings.",
     ),
     Project(
       slug: "habit-tracking",
@@ -41,6 +44,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/habit-tracker-code.png",
       categories: ["python", "web", "mongodb"],
       prod: "https://habit-tracker-flask.up.railway.app",
+      description: "A habit tracking application built with Python and MongoDB.",
     ),
     Project(
       slug: "microblog",
@@ -49,6 +53,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/microblog.png",
       categories: ["python", "web", "mongodb"],
       prod: "https://python-microblog-production.up.railway.app/",
+      description: "A microblogging platform built with Python and MongoDB.",
     ),
     Project(
       slug: "task-list",
@@ -57,6 +62,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/tasklist.png",
       categories: ["go", "react", "mongodb"],
       prod: "https://go-tasks-production.up.railway.app/",
+      description: "A task list application built with Go, React, and MongoDB.",
     ),
     Project(
       slug: "thesis",
@@ -65,6 +71,7 @@ pub fn load_context() -> Context {
       hero: "/static/img/habit-tracking-hero.png",
       categories: ["writing"],
       prod: "https://urn.fi/URN:NBN:fi:amk-2020100721092",
+      description: "A thesis regarding the expansion of an online store into the Estonian market.",
     ),
   ]
 

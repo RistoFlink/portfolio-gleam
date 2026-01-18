@@ -1,17 +1,17 @@
 import gleam/dict
-import gleam/http/request.{Get}
-import gleam/string_builder
-import portfolio/models.{type Context}
-import portfolio/views/about
-import portfolio/views/contact
-import portfolio/views/home
-import portfolio/views/project
+import gleam/http.{Get}
+import models.{type Context}
+import views/about
+import views/contact
+import views/home
+import views/layout
+import views/project
 import wisp.{type Request, type Response}
 
 pub fn handle_request(req: Request, ctx: Context) -> Response {
-  use req <- wisp.log_request(req)
-  use req <- wisp.rescue_crashes
-  use req <- wisp.serve_static(req, under: "/static", from: ctx.static_path)
+  use <- wisp.log_request(req)
+  use <- wisp.rescue_crashes
+  use <- wisp.serve_static(req, under: "/static", from: ctx.static_path)
 
   case req.method, wisp.path_segments(req) {
     Get, [] -> {
@@ -45,6 +45,6 @@ pub fn handle_request(req: Request, ctx: Context) -> Response {
 }
 
 fn not_found() -> Response {
-  string_builder.from_string("<h1>404 - Page Not Found</h1>")
+  layout.root("404", "", [])
   |> wisp.html_response(404)
 }

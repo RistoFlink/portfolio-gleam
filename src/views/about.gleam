@@ -1,13 +1,12 @@
-import gleam/string_builder.{type StringBuilder}
 import nakai/attr
 import nakai/html
-import portfolio/views/layout
+import views/layout
 
-pub fn render() -> StringBuilder {
+pub fn render() {
   layout.root("About", "about", [
     html.main([attr.class("main main--about")], [
-      html.h1([], [html.text("About Me")]),
-      html.p([], [html.text("Content placeholder.")]),
+      html.h1_text([], "About Me"),
+      html.p_text([], "Content placeholder."),
     ]),
   ])
 }

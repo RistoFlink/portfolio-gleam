@@ -1,17 +1,17 @@
-import gleam/string_builder.{type StringBuilder}
 import nakai/attr
 import nakai/html
-import portfolio/views/layout
+import views/layout
 
-pub fn render() -> StringBuilder {
+pub fn render() {
   layout.root("Contact", "contact", [
     html.main([attr.class("main main--contact")], [
-      html.h1([], [html.text("Contact")]),
+      html.h1_text([], "Contact"),
       html.p([], [
-        html.text("You can reach me at "),
-        html.a([attr.href("mailto:email@example.com")], [
-          html.text("email@example.com"),
-        ]),
+        html.Text("You can reach me at "),
+        html.a_text(
+          [attr.href("mailto:email@example.com")],
+          "email@example.com",
+        ),
       ]),
     ]),
   ])
